@@ -1,0 +1,115 @@
+<?php
+    session_start();
+    
+    
+       //if (!isset($_POST['submitok']));
+        // Display the user registration  form
+       
+
+
+
+    //if user is not logged in
+    if( !$_SESSION['loggedInUser']){
+        
+        //send them to the login page
+        header("Location: index.html");
+    }
+     include( 'connection.php' );
+     include( 'insert.php');
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+
+
+
+
+
+<title>Registration Portal</title>
+ <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>  
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  
+  <link rel="stylesheet" type="text/css" href="registrationportal.css">
+
+</head>
+<body >
+
+
+
+<h1>Advisor Registration Portal</h1>
+
+
+ <div class="container">
+
+   <form action="insertadvisor.php" method="POST"> 
+ <!-- <form method="post" action="<?=$_SERVER['PHP_SELF']?>">-->
+  <table>
+   <tr>
+    <td><strong><font color="#f4511e">Advisor Name :</font></strong></td>
+    <td><input type="text" name="name" title="Please enter your name" 
+    placeholder="Enter your first and last name" required>
+    <font color="orangered" size="+4"><tt><b>*</b></tt></font></td>
+   </tr>
+   <tr>
+    <td><strong><font color="#f4511e">Password :</font></strong>
+    </td>
+    <td><input type="password"  minlength="8" title="Password must contain at least 8 characters, including UPPER/lowercase and numbers" type="password" placeholder=" At least 8 characters long, including UPPER/lowercase & a number" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" name="password" onchange="
+  this.setCustomValidity(this.validity.patternMismatch ? this.title : '');
+  if(this.checkValidity()) form.password2.pattern = RegExp.escape(this.value);
+">     <font color="orangered" size="+4"><tt><b>*</b></tt></font></td></td>
+   </tr>
+   
+<tr>
+    <td><strong><font color="#f4511e">Confirm Password :</font></strong></td>
+    <td><input type="password" title="Please enter the same Password as above" type="password" placeholder="Enter the same Password as above" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" name="password2" onchange="
+  this.setCustomValidity(this.validity.patternMismatch ? this.title : '');">
+    <font color="orangered" size="+4"><tt><b>*</b></tt></font></td>  </td>
+   </tr>
+
+
+
+
+
+   <tr>
+    <td><strong><font color="#f4511e">Email :</font></strong></td>
+    <td><input type="email" name="username" title="Please enter your email" 
+    placeholder="Enter your email" required>
+        <font color="orangered" size="+4"><tt><b>*</b></tt></font></td></td>
+   </tr> 
+   <tr>
+    <td><strong><font color="#f4511e">Phone Number :</font></strong></td>
+    <td>
+     <input type="phone" name="phone"  title="Please enter your phone number" 
+     placeholder="Enter your phone number" required>
+       <font color="orangered" size="+4"><tt><b>*</b></tt></font></td> </td>
+   </tr>
+    <tr>
+    <td><strong><font color="#f4511e">Advising Room Number :</font></strong></td>
+    <td>
+     <input type="phone" name="room"  title="Please enter your Advising room number" 
+     placeholder="Please enter your Advising room number" required>
+       <font color="orangered" size="+4"><tt><b>*</b></tt></font></td> </td>
+   </tr>
+
+   <tr>
+    <td><input type="submit" class="button" style="vertical-align:center;" value="Submit"
+    name = "submittok" ></td>
+    
+
+   </tr>
+  </table>
+ </form>
+
+
+</div>
+
+
+</body>
+
+</html>

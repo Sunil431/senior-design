@@ -1,0 +1,33 @@
+body{
+
+    margin:0px;
+    font-family:Times New Roman;
+    background-color: midnightblue;
+
+}
+
+
+h1{
+
+margin:10px;
+color:white;
+text-align: center;
+
+font-family: fantasy;
+font-size: 3em;
+ box-shadow: 4px 4px 5px  #888888;
+
+}
+
+.container{
+    
+margin:10px;
+
+text-align: center;
+
+font-family: Times New Roman;
+    
+color:#f4511e;
+
+font-size: 15px;
+}

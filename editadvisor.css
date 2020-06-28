@@ -1,0 +1,99 @@
+body{
+
+margin:0 auto;
+font-family:Times New Roman;
+ 
+ background-size: cover;
+
+   padding:10px;
+  
+
+background-color: midnightblue;
+
+}
+
+
+h1{
+
+margin:0 auto;
+color:white;
+text-align: center;
+
+font-family: fantasy;
+font-size: 3em;
+ box-shadow: 4px 4px 5px  #888888;
+
+}
+
+.container {
+    /*show heigh: auto*/
+    height: 50vh; 
+    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+   
+    font-size: 25px;
+}
+
+
+.button {
+    font-family:Times New Roman;
+  display: inline-block;
+  border-radius: 30px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+  color:black;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+input[type=text], input[type=password], input[type=email], input[type=phone]  {
+  font-family:Times New Roman;
+  width: 100%;
+  padding: 10px 0px;
+  margin: 20px ;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  color: blue;
+  font-size: 20px;
+}
+
+/* Bordered form */
+form {
+  border: 3px solid #f1f1f1;
+  padding: 50px;
+}
